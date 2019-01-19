@@ -6,3 +6,15 @@ title: Vishal Duggal
 	<h1>Hi there, I'm Vishal Duggal!</h1>
 	<p>Description <em>of me</em> for the site. <a href="/about">Read more about my life...</a></p>
 </div><!-- /.blurb -->
+
+<ul class="entries">
+  {% for post in paginator.posts %}
+  <li>
+    <a href="{{ post.url }}">
+    <h3>{{ post.title }}</h3>
+    <p class="blogdate">{{ post.date | date: "%d %B %Y" }}</p>
+    <div>{{ post.content |truncatehtml | truncatewords: 60 }}</div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
